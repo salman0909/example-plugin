@@ -1,0 +1,21 @@
+apiVersion: krew.googlecontainertools.github.com/v1alpha2
+kind: Plugin
+metadata:
+  name: pod-info-plugin
+spec:
+  version: "v0.1.0"
+  homepage: "https://github.com/salman0909/example-plugin.git"
+  shortDescription: "Kubectl plugin for fetching pod information"
+  description: "A plugin that fetches and displays information about pods in a Kubernetes cluster."
+  caveats: |
+    Ensure you have the necessary permissions to retrieve pod information.
+  platforms:
+  - selector:
+      matchLabels:
+        os: linux
+    uri: "https://github.com/salman0909/example-plugin/example-plugin.tar.gz"
+    sha256: "398239edb02d6c03259018fd796f67c04678436d2f3adf73416a17514bddc6be"
+    files:
+            #- from: "example-plugin-*/kubectl-example-plugin.sh"
+            #to: "./kubectl-example-plugin.sh"
+    bin: kubectl-example-plugin.sh
